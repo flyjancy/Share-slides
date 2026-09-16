@@ -6,3 +6,4 @@
 
 - [什么是 Agent](./什么是%20Agent/What-an-agent-actually-is.pdf)
 - [为什么需要 Reviewer](./为什么%20需要%20Reviewer/Why-your-plan-needs-a-smarter-reviewer.pdf)
+- [介绍 jerrypi](./介绍%20jerrypi/Introducing-jerrypi.pdf)
