@@ -422,16 +422,6 @@ code{font-family:var(--font-title);font-size:.9em;background:var(--face);
 .ti .tt{font-size:var(--fs-key);font-weight:600;flex:none}
 .ti .td{font-size:var(--fs-body);color:var(--ink2);margin-left:auto;text-align:right}
 
-/* ══ 原型 · 章节页 ════════════════════════════════════════════════════
-   每个 section 开头单独一页。和封面同构，但轻一级。                */
-.sect{justify-content:center}
-.sect .snum{font-family:var(--font-title);font-size:calc(var(--u)*2.6);
-  line-height:1;color:var(--accent);flex:none;margin-bottom:calc(var(--u)*0.4)}
-.sect .sline{width:calc(var(--u)*2.4);height:calc(var(--u)*0.2);
-  background:var(--accent);flex:none;margin-bottom:calc(var(--u)*0.7)}
-.sect h1{font-size:calc(var(--u)*1.72);margin-bottom:calc(var(--u)*0.5)}
-.sect .sub{font-size:var(--fs-lead);color:var(--ink2);line-height:1.55;
-  max-width:calc(var(--u)*30)}
 
 /* ══ 原型 · 章节分隔页（满高红竖带）════════════════════════════════════
    每个 section 开头一页。做法是把每页标题左边那个红竖块（.ttl .bar）
