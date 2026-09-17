@@ -1,1 +1,3 @@
 .DS_Store
+# setpages.py 的中间产物：抽出 → 改 → 贴回，贴回后即冗余
+*.pages.html
