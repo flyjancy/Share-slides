@@ -436,6 +436,26 @@ code{font-family:var(--font-title);font-size:.9em;background:var(--face);
 .sect .sub{font-size:var(--fs-lead);color:var(--ink2);line-height:1.55;
   max-width:calc(var(--u)*30)}
 
+/* ══ 原型 · 章节分隔页（满高红竖带）════════════════════════════════════
+   每个 section 开头一页。做法是把每页标题左边那个红竖块（.ttl .bar）
+   **放大到满高** —— 同一个母题说得更响，而不是新引入一整页红底：
+   底色仍是白，不破铁律 6「一份 deck 一个底色」。
+   - 竖带用负偏移顶到页面边缘，所以 .chapter 必须 overflow:hidden ——
+     否则 PDF 分页时它会渗到相邻页（试做时踩到过）。
+   - 左内边距置 0 让竖带贴左边缘；正文与页脚各自把 --pad-x 补回来，
+     **页脚的 grid 宽度与其它页完全一致**，中槽才仍然居中于页面。      */
+.chapter{padding-left:0;overflow:hidden}
+.chapter .cband{position:absolute;left:0;top:calc(-1*var(--pad-t));
+  bottom:calc(-1*var(--pad-b));width:calc(var(--u)*10);background:var(--accent);
+  display:flex;align-items:center;justify-content:center}
+.chapter .cband .cnum{font-family:var(--font-title);font-size:var(--fs-cover);
+  line-height:1;color:var(--paper)}
+.chapter .body{margin-left:calc(var(--u)*12.4);align-content:safe center}
+.chapter h1{font-size:var(--fs-cover);line-height:1.08;letter-spacing:-.02em}
+.chapter .sub{font-size:var(--fs-lead);color:var(--ink2);line-height:1.5;
+  margin-top:calc(var(--u)*0.6);max-width:calc(var(--u)*30)}
+.chapter .foot{margin-left:var(--pad-x);border-top-color:transparent}
+
 
 </style>
 </head>
@@ -459,6 +479,15 @@ code{font-family:var(--font-title);font-size:.9em;background:var(--face);
       <div class="ti"><span class="tn">03</span><span class="tt">实例与哲学</span><span class="td">Pi 只用四个工具；敢做小是设计选择</span></div>
       <div class="ti"><span class="tn">04</span><span class="tt">优点与短板</span><span class="td">读得懂所以可信；代价是没有长期记忆</span></div>
     </div>
+  </div>
+  <div class="foot"><span class="ftitle">What an agent actually is</span><span class="pno"></span></div>
+</section>
+
+<section class="slide chapter" data-notes="进第一章。这一章只做一件事：把「更聪明的聊天机器人」这个预设拆掉 —— 差别不在脑子，在手。">
+  <div class="cband"><span class="cnum">01</span></div>
+  <div class="body">
+    <h1>What it is not</h1>
+    <p class="sub">不是更聪明的聊天机器人，光有脑子还不够</p>
   </div>
   <div class="foot"><span class="ftitle">What an agent actually is</span><span class="pno"></span></div>
 </section>
@@ -496,6 +525,15 @@ code{font-family:var(--font-title);font-size:.9em;background:var(--face);
   <div class="foot"><span class="ftitle">What an agent actually is</span><span class="pno"></span></div>
 </section>
 
+<section class="slide chapter" data-notes="进第二章。这一章给定义和边界：Loop 靠什么自我纠错，以及它做不到什么 —— 边界在工具，不在模型。">
+  <div class="cband"><span class="cnum">02</span></div>
+  <div class="body">
+    <h1>How the loop works</h1>
+    <p class="sub">Agent Loop 自我纠错，能力上限由工具决定</p>
+  </div>
+  <div class="foot"><span class="ftitle">What an agent actually is</span><span class="pno"></span></div>
+</section>
+
 <section class="slide" data-notes="全场最重要的一页，慢讲。关键不是四个器官，是它们连成圈。这一圈才是「自主」的来源。">
   <div class="ttl"><span class="bar"></span><h1>It can fix its own mistakes</h1></div>
   <div class="body">
@@ -528,6 +566,15 @@ code{font-family:var(--font-title);font-size:.9em;background:var(--face);
   <div class="foot"><span class="ftitle">What an agent actually is</span><span class="pno"></span></div>
 </section>
 
+<section class="slide chapter" data-notes="进第三章。这一章用 Pi 当实例：四个工具怎么够用，以及「敢做小」为什么是设计选择而不是妥协。">
+  <div class="cband"><span class="cnum">03</span></div>
+  <div class="body">
+    <h1>Small on purpose</h1>
+    <p class="sub">Pi 只用四个工具；敢做小是设计选择</p>
+  </div>
+  <div class="foot"><span class="ftitle">What an agent actually is</span><span class="pno"></span></div>
+</section>
+
 <section class="slide" data-notes="这是 Pi 的自我介绍。重点全在第四只手：跑命令。因为它通吃，所以四只手就够。">
   <div class="ttl"><span class="bar"></span><h1>Pi gets by with four hands</h1></div>
   <div class="body">
@@ -552,6 +599,15 @@ code{font-family:var(--font-title);font-size:.9em;background:var(--face);
     </div>
   </div>
   <div class="quote">它给的是原料，不是成品。</div>
+  <div class="foot"><span class="ftitle">What an agent actually is</span><span class="pno"></span></div>
+</section>
+
+<section class="slide chapter" data-notes="进第四章。优点和代价一起讲，只说优点像广告。代价是没有长期记忆 —— 这条要讲得比优点慢。">
+  <div class="cband"><span class="cnum">04</span></div>
+  <div class="body">
+    <h1>Gains and costs</h1>
+    <p class="sub">读得懂所以可信；代价是没有长期记忆</p>
+  </div>
   <div class="foot"><span class="ftitle">What an agent actually is</span><span class="pno"></span></div>
 </section>
 
